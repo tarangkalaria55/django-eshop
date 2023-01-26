@@ -1,0 +1,56 @@
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarToggler"
+                aria-controls="navbarToggler"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        {% url 'accounts:home' as url %}
+        <a class="navbar-brand me-lg-auto ms-md-auto"
+           href="{% if request.path == url %}#{% else %}{{ url }}{% endif %}">
+            <img src="{% static 'img/bootstrap-logo.svg' %}"
+                 alt="Bootstrap"
+                 width="40"
+                 height="32"
+                 class="d-inline-block align-text-top"/>
+        </a>
+        <div class="collapse navbar-collapse justify-content-around"
+             id="navbarToggler">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    {% comment %} {% url 'users:home' as url %}
+                    <a class="nav-link {% if request.path == url %}active{% endif %}" href="{{url}}">Home</a>
+                    {% endcomment %}
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hi {{ request.user | title }}</a>
+                    </li>
+                    <li class="nav-item">
+                        {% url 'account_logout' as url %}
+                        <a class="nav-link {% if request.path == url %}active{% endif %}"
+                           href="{{ url }}">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        {% url 'account_login' as url %}
+                        <a class="nav-link {% if request.path == url %}active{% endif %}"
+                           href="{{ url }}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        {% url 'account_signup' as url %}
+                        <a class="nav-link {% if request.path == url %}active{% endif %}"
+                           href="{{ url }}">Signup</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</nav>

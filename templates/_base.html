@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="keywords" content="foo,bar" />
+        <meta name="description" content="foo" />
+        <title>
+            {% block head_title %}
+                Document
+            {% endblock head_title %}
+        </title>
+        {% include "_styles.html" %}
+        {% block extra_head %}
+        {% endblock extra_head %}
+    </head>
+    <body>
+        {% block body %}
+            {% block navbar %}
+                {% include "_navbar.html" %}
+            {% endblock navbar %}
+            <main>
+                <div class="container">
+                    {% block content %}
+                    {% endblock content %}
+                </div>
+            </main>
+        {% endblock body %}
+        {% include "_scripts.html" %}
+        {% include "_message.html" %}
+        {% block extra_body %}
+        {% endblock extra_body %}
+    </body>
+</html>
