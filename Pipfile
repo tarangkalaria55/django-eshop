@@ -5,13 +5,11 @@ name = "pypi"
 
 [packages]
 django = "*"
-django-allauth = "*"
 crispy-bootstrap5 = "*"
-django-jazzmin = "*"
+django-allauth = "*"
 
 [dev-packages]
 black = "*"
-djlint = "*"
 
 [requires]
 python_version = "3.11"
