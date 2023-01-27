@@ -7,6 +7,7 @@ name = "pypi"
 django = "*"
 django-allauth = "*"
 crispy-bootstrap5 = "*"
+django-jazzmin = "*"
 
 [dev-packages]
 black = "*"
@@ -14,3 +15,6 @@ djlint = "*"
 
 [requires]
 python_version = "3.11"
+
+[pipenv]
+allow_prereleases = true

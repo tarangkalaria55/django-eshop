@@ -4,6 +4,11 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import RedirectView
 
+# admin site
+admin.site.site_header = "E-Shop Admin"
+admin.site.site_title = "E-Shop Admin Site"
+admin.site.index_title = "E-Shop Admin"
+
 urlpatterns = [
     path("", RedirectView.as_view(url=reverse_lazy("account_login")), name="login"),
     path("admin/", admin.site.urls),
