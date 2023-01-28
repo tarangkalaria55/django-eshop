@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.db import models
-from django.shortcuts import reverse
+from django.urls import reverse
 from django_countries.fields import CountryField
 
 CATEGORY = (("S", "Shirt"), ("SP", "Sport Wear"), ("OW", "Out Wear"))

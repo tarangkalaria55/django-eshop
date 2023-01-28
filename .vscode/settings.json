@@ -6,12 +6,47 @@
     "**/templates/*": "django-txt",
     "**/requirements{/**,*}.{txt,in}": "pip-requirements"
   },
-
   "emmet.includeLanguages": {
     "django-html": "html"
   },
-
   "beautify.language": {
-    "html": ["htm", "html", "django-html"]
-  }
+    "html": [
+      "htm",
+      "html",
+      "django-html"
+    ]
+  },
+  "[html]": {
+    "editor.defaultFormatter": "monosans.djlint"
+  },
+  "[django-html]": {
+    "editor.defaultFormatter": "monosans.djlint"
+  },
+  "[handlebars]": {
+    "editor.defaultFormatter": "monosans.djlint"
+  },
+  "[hbs]": {
+    "editor.defaultFormatter": "monosans.djlint"
+  },
+  "[mustache]": {
+    "editor.defaultFormatter": "monosans.djlint"
+  },
+  "[jinja]": {
+    "editor.defaultFormatter": "monosans.djlint"
+  },
+  "[jinja-html]": {
+    "editor.defaultFormatter": "monosans.djlint"
+  },
+  "[nj]": {
+    "editor.defaultFormatter": "monosans.djlint"
+  },
+  "[njk]": {
+    "editor.defaultFormatter": "monosans.djlint"
+  },
+  "[nunjucks]": {
+    "editor.defaultFormatter": "monosans.djlint"
+  },
+  "[twig]": {
+    "editor.defaultFormatter": "monosans.djlint"
+  },
 }
