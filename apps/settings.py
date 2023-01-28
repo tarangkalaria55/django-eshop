@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "crispy_forms",
     "crispy_bootstrap5",
+    "django_countries",
     # Local app
     "accounts",
     "core",
@@ -112,7 +113,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Static files (CSS, JavaScript, Images)
 
 STATIC_URL = "static/"
+STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
+MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR / "media"
 
 AUTH_USER_MODEL = "accounts.CustomUser"
 
